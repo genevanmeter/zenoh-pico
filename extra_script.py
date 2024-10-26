@@ -48,20 +48,22 @@ elif FRAMEWORK == 'arduino':
                       "-<system/windows/>",
                       "-<system/zephyr/>"]
         CPPDEFINES = ["ZENOH_ARDUINO_ESP32", "ZENOH_C_STANDARD=99"]
-    elif PLATFORM == 'rpipicow':
-        SRC_FILTER = ["+<*>",
-                      "-<tests/>",
-                      "-<example/>",
-                      "-<system/arduino/opencr>",
-                      "-<system/emscripten/>",
-                      "-<system/espidf>",
-                      "-<system/freertos_plus_tcp/>",
-                      "-<system/mbed/>",
-                      "-<system/unix/>",
-                      "-<system/flipper/>",
-                      "-<system/windows/>",
-                      "-<system/zephyr/>"]
-        CPPDEFINES = ["ZENOH_ARDUINO_PICOW", "ZENOH_C_STANDARD=99"]
+    elif PLATFORM == 'raspberrypi':
+        BOARD = env.get("PIOENV")
+        if BOARD == "rpipicow":
+            SRC_FILTER = ["+<*>",
+                        "-<tests/>",
+                        "-<example/>",
+                        "-<system/arduino/opencr>",
+                        "-<system/emscripten/>",
+                        "-<system/espidf>",
+                        "-<system/freertos_plus_tcp/>",
+                        "-<system/mbed/>",
+                        "-<system/unix/>",
+                        "-<system/flipper/>",
+                        "-<system/windows/>",
+                        "-<system/zephyr/>"]
+            CPPDEFINES = ["ZENOH_ARDUINO_PICOW", "ZENOH_C_STANDARD=99"]
     if PLATFORM == 'ststm32':
         BOARD = env.get("PIOENV")
         if BOARD == 'opencr':
