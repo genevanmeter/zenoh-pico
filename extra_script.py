@@ -48,7 +48,7 @@ elif FRAMEWORK == 'arduino':
                       "-<system/windows/>",
                       "-<system/zephyr/>"]
         CPPDEFINES = ["ZENOH_ARDUINO_ESP32", "ZENOH_C_STANDARD=99"]
-    elif PLATFORM == 'raspberrypi':
+    elif PLATFORM == 'https://github.com/maxgerhardt/platform-raspberrypi.git':
         BOARD = env.get("PIOBOARD")
         if BOARD == "rpipicow":
             SRC_FILTER = ["+<*>",
