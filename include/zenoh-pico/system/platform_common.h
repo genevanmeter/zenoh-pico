@@ -38,6 +38,8 @@
 #include "zenoh-pico/system/platform/zephyr.h"
 #elif defined(ZENOH_ARDUINO_ESP32)
 #include "zenoh-pico/system/platform/arduino/esp32.h"
+#elif defined(ZENOH_ARDUINO_PICOW)
+#include "zenoh-pico/system/platform/arduino/esp32.h"
 #elif defined(ZENOH_ARDUINO_OPENCR)
 #include "zenoh-pico/system/platform/arduino/opencr.h"
 #elif defined(ZENOH_EMSCRIPTEN)
